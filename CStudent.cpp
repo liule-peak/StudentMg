@@ -26,7 +26,7 @@ std::ostream& operator<<(std::ostream& os, CStudent& stu) {
 //     os<<"id: "<<stu.getId()<<", name: "<<stu.getName()<<", age: "
 //         <<stu.getAge();
 
-	os << stu.getId() << "     " << stu.getName() << "     " << stu.getAge();
+	os << stu.getId() << "    " << stu.getName() << "    " << stu.getAge();
 
 	return os;
 }

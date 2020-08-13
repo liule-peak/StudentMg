@@ -11,30 +11,30 @@ CMainView::~CMainView()
 /* 欢迎 */
 void CMainView::welcome() {
 	system("cls");
-	std::cout << "欢迎来到xxx大系统" << std::endl;
+	std::cout << "welcome to student management system" << std::endl;
 }
 
 /* 显示菜单 */
 void CMainView::showMenu() {
 
 	std::cout << "\n";
-	std::cout << "操作步骤" << std::endl;
+	std::cout << "Steps:" << std::endl;
 
-	std::cout << "1. 录入" << std::endl;
-	std::cout << "2. 修改" << std::endl;
-	std::cout << "3. 查找" << std::endl;
-	std::cout << "4. 删除" << std::endl;
-	std::cout << "5. 显示所有" << std::endl;
-	std::cout << "6. 保存至文件" << std::endl;
-	std::cout << "7. 从文件导入" << std::endl;
-	std::cout << "0. 退出" << std::endl;
+	std::cout << "1. add student" << std::endl;
+	std::cout << "2. modify student" << std::endl;
+	std::cout << "3. find student" << std::endl;
+	std::cout << "4. delete student" << std::endl;
+	std::cout << "5. show all" << std::endl;
+	std::cout << "6. output to a file" << std::endl;
+	std::cout << "7. import to a file" << std::endl;
+	std::cout << "0. exit" << std::endl;
 	std::cout << "\n";
 
-	std::cout << "Author：qcy" << std::endl;
-	std::cout << "2016/11/28" << std::endl;
+	std::cout << "Author：liule" << std::endl;
+	std::cout << "2019/01/01" << std::endl;
 
 	std::cout << "\n";
-	std::cout << "请选择操作：";
+	std::cout << "please select a operation：";
 }
 
 
@@ -65,7 +65,7 @@ void CMainView::addStuAtView(std::map<int, CStudent>& stu_m1)
 
 	system("cls");
 
-	std::cout << "录入\n";
+	std::cout << "add\n";
 	std::cout << "id:";
 	std::cin >> id;
 
@@ -93,7 +93,7 @@ void CMainView::addStuAtView(std::map<int, CStudent>& stu_m1)
 void CMainView::findStuAtView(const std::map<int, CStudent>& m1) {
 
 	system("cls");
-	std::cout << "请输入要查找学生的id" << std::endl;
+	std::cout << "please input the id of your want to search" << std::endl;
 	int id;
 	std::cin >> id;
 
@@ -107,7 +107,7 @@ void CMainView::findStuAtView(const std::map<int, CStudent>& m1) {
 	}
 	else
 	{
-		std::cout << "查无此人" << std::endl;
+		std::cout << "there is no this student" << std::endl;
 	}
 
 	system("pause");
@@ -121,7 +121,7 @@ void CMainView::findStuAtView(const std::map<int, CStudent>& m1) {
 void CMainView::deleteByIdAtView(std::map<int, CStudent>& v1) {
 
 	system("cls");
-	std::cout << "请输入要删除的学生的id" << std::endl;
+	std::cout << "please input the id you want ro delete" << std::endl;
 	int id;
 	std::cin >> id;
 
@@ -130,10 +130,10 @@ void CMainView::deleteByIdAtView(std::map<int, CStudent>& v1) {
 
 	if (b)
 	{
-		std::cout << "删除成功" << std::endl;
+		std::cout << "delete success!" << std::endl;
 	}
 	else {
-		std::cout << "查无此人" << std::endl;
+		std::cout << "there is no this student" << std::endl;
 	}
 
 	system("pause");
@@ -148,7 +148,7 @@ void CMainView::updateByIdAtView(std::map<int, CStudent>& m1) {
 
 	system("cls");
 
-	std::cout << "请输入要修改的学生的id" << std::endl;
+	std::cout << "please input the id you want to modify" << std::endl;
 	int id;
 	std::cin >> id;
 	std::string name;
@@ -172,11 +172,11 @@ void CMainView::updateByIdAtView(std::map<int, CStudent>& m1) {
 	if (cStu2.getId() != -1)
 	{
 		std::cout << cStu2 << std::endl;
-		std::cout << "修改成功" << std::endl;
+		std::cout << "modify success" << std::endl;
 	}
 	else
 	{
-		std::cout << "查无此人" << std::endl;
+		std::cout << "there is no this student" << std::endl;
 	}
 
 	system("pause");
@@ -191,7 +191,7 @@ void CMainView::saveToFileAtView(const std::map<int, CStudent>& m1, std::string 
 
 	if (m1.begin() == m1.end()) {
 		system("cls");
-		std::cout << "还没有任何学生信息，无法保存" << std::endl;
+		std::cout << "there is not information of student, can not save" << std::endl;
 	}
 	else {
 		// 保存
@@ -199,10 +199,10 @@ void CMainView::saveToFileAtView(const std::map<int, CStudent>& m1, std::string 
 		bool b = cStuMg.saveToFile(m1, pathName);
 		if (b) {
 			system("cls");
-			std::cout << "保存成功" << std::endl;
+			std::cout << "save success" << std::endl;
 		}
 		else {
-			std::cout << "保存失败" << std::endl;
+			std::cout << "save defeat" << std::endl;
 		}
 	}
 
@@ -221,10 +221,10 @@ void CMainView::readFromFileAtView(std::map<int, CStudent>& m, std::string pathN
 	CStudentMg cStuMg;
 	bool b = cStuMg.readFromFile(m, pathName);
 	if (b) {
-		std::cout << "读取成功" << std::endl;
+		std::cout << "read success" << std::endl;
 	}
 	else {
-		std::cout << "读取失败" << std::endl;
+		std::cout << "read defeat" << std::endl;
 	}
 	system("pause");
 	system("cls");

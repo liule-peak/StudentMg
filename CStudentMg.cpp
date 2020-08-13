@@ -97,7 +97,7 @@ bool CStudentMg::saveToFile(const map <int, CStudent>& m1, const string& pathNam
 	if (ofs) {
 		stringstream ss;
 
-		cout << "文件打开" << endl;
+		cout << "open file" << endl;
 
 		CStudent stu;
 		for (auto p = m1.begin(); p != m1.end(); p++)
@@ -112,7 +112,7 @@ bool CStudentMg::saveToFile(const map <int, CStudent>& m1, const string& pathNam
 	}
 	else
 	{
-		cout << "文件打开失败" << endl;
+		cout << "fail to open file" << endl;
 		b = false;
 	}
 
@@ -128,7 +128,7 @@ bool CStudentMg::readFromFile(std::map<int, CStudent>& m1, std::string path) {
 
 	fstream ifs(path, ios::in);
 	if (ifs) {
-		cout << "文件打开" << endl;
+		cout << "open file" << endl;
 		string s;
 		stringstream ss;
 		while (getline(ifs, s)) // 怎么一行行地读取？
@@ -147,7 +147,7 @@ bool CStudentMg::readFromFile(std::map<int, CStudent>& m1, std::string path) {
 
 	}
 	else {
-		cout << "文件打开失败" << endl;
+		cout << "fail to open file" << endl;
 		b = false;
 	}
 
